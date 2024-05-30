@@ -13,7 +13,7 @@ function countStudents(file) {
       const [name, , , field] = lines[i].split(',');
 
       if (field) {
-        fields[field] = fields[field] || { count: 0, names: []};
+        fields[field] = fields[field] || { count: 0, names: [] };
         fields[field].count += 1;
         fields[field].names.push(name);
       }
@@ -24,7 +24,7 @@ function countStudents(file) {
         console.log(`Number of students in ${field}: ${fields[field].count}. List: ${fields[field].names.join(', ')}`);
       }
     }
-  } catch {
+  } catch (error) {
     throw new Error('Cannot load the database');
   }
 }
