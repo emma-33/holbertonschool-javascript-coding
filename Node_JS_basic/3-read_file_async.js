@@ -13,18 +13,18 @@ function countStudents(file) {
           firstname, lastname, age, field,
         };
       });
-      
+
       const fields = {
         CS: [],
         SWE: [],
       };
-      
+
       lines.forEach((student) => {
         if (fields[student.field]) {
           fields[student.field].push(student.firstname);
         }
       });
-      
+
       console.log(`Number of students: ${lines.length}`);
       console.log(`Number of students in CS: ${fields.CS.length || 0}. List: ${fields.CS.join(', ')}`);
       console.log(`Number of students in SWE: ${fields.SWE.length || 0}. List: ${fields.SWE.join(', ')}`);
@@ -33,7 +33,7 @@ function countStudents(file) {
         totalNumber: `Number of students: ${lines.length}`,
         CS: `Number of students in CS: ${fields.CS.length || 0}. List: ${fields.CS.join(', ')}`,
         SWE: `Number of students in SWE: ${fields.SWE.length || 0}. List: ${fields.SWE.join(', ')}`,
-      }
+      };
       resolve(result);
     });
   });
