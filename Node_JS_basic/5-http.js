@@ -24,7 +24,7 @@ const app = http.createServer((req, res) => {
       .catch((error) => {
         res.write(error.message);
         res.end();
-      })
+      });
   }
 });
 
